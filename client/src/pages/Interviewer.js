@@ -9,9 +9,9 @@ const Interview = () => {
             <div className="container mx-auto flex flex-col lg:flex-row gap-12">
                 <div className="flex-1 lg:w-1/2">
                     <h1 className="text-3xl font-bold mb-8 text-center lg:text-left">
-                        Technical Interview Practice
+                        Problem
                     </h1>
-                    <div className="mb-12">
+                    <div className="mb-12 p-6 rounded-lg shadow-neon-blue">
                         <Question />
                     </div>
                 </div>
@@ -20,7 +20,9 @@ const Interview = () => {
                     <h2 className="text-2xl font-semibold mb-6 text-center lg:text-left">
                         Code Sandbox
                     </h2>
-                    <Sandbox />
+                    <div className="p-6 rounded-lg shadow-neon-purple">
+                        <Sandbox />
+                    </div>
                 </div>
             </div>
         </div>
