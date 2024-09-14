@@ -5,7 +5,6 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import Landing from './pages/Landing';
 import Interviewer from './pages/Interviewer';
 import Menu from './components/Menu'; 
-import Footer from './components/Footer'; 
 import PrivateRoute from './components/PrivateRoute'; // Import the PrivateRoute component
 
 const domain = "dev-ssn3e0uff3demdu5.us.auth0.com";
@@ -28,7 +27,6 @@ function App() {
               element={<PrivateRoute element={<Interviewer />} />}
             />
           </Routes>
-          <Footer /> 
         </div>
       </Router>
     </Auth0Provider>

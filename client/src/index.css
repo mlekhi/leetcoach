@@ -9,8 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000; /* Ensures the background is always black */
-  color: white; /* Makes the default text color white */
+  background-color: #000;
+  color: white; 
 }
 
 code {

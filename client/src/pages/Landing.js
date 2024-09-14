@@ -1,5 +1,6 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // import carousel styles
 import Carousel from '../components/Carousel/CarouselWrapper';
+import Footer from '../components/Footer'; 
 
 function Landing() {
   return (
@@ -29,6 +30,7 @@ function Landing() {
           <Carousel />
         </div>
       </header>
+      <Footer />
     </div>
   );
 }

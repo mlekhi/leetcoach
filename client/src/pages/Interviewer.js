@@ -6,7 +6,7 @@ import Timer from '../components/Timer';
 
 const Interview = () => {
     return (
-        <div className="min-h-screen text-white py-12 px-6 flex items-start pt-40 pb-40">
+        <div className="h-screen w-screen text-white flex items-center justify-center overflow-hidden">
             <div className="container mx-auto flex flex-col lg:flex-row gap-12">
                 
                 <div className="lg:w-1/4">
@@ -31,7 +31,6 @@ const Interview = () => {
                 </div>
             </div>
         </div>
-
     );
 }
 
