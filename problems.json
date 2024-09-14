@@ -1,0 +1,214 @@
+[
+    {
+        "problem_name": "Duplicate Integer",
+        "difficulty": "Easy",
+        "examples": [
+            {
+                "input": "nums = [1, 2, 3, 3]",
+                "output": "true"
+            },
+            {
+                "input": "nums = [1, 2, 3, 4]",
+                "output": "false"
+            }
+        ],
+        "constraints": "None provided",
+        "solution": "class Solution:\n    def hasDuplicate(self, nums: List[int]) -> bool:\n        hashset = set()\n        for n in nums:\n            if n in hashset:\n                return True\n            hashset.add(n)\n        return False"
+    },
+    {
+        "problem_name": "Is Anagram",
+        "difficulty": "Easy",
+        "examples": [
+            {
+                "input": "s = \"racecar\", t = \"carrace\"",
+                "output": "true"
+            },
+            {
+                "input": "s = \"jar\", t = \"jam\"",
+                "output": "false"
+            }
+        ],
+        "constraints": "s and t consist of lowercase English letters.",
+        "solution": "class Solution:\n    def isAnagram(self, s: str, t: str) -> bool:\n        if len(s) != len(t):\n            return False\n        countS, countT = {}, {}\n        for i in range(len(s)):\n            countS[s[i]] = 1 + countS.get(s[i], 0)\n            countT[t[i]] = 1 + countT.get(t[i], 0)\n        return countS == countT"
+    },
+    {
+        "problem_name": "Two Integer Sum",
+        "difficulty": "Easy",
+        "examples": [
+            {
+                "input": "nums = [3, 4, 5, 6], target = 7",
+                "output": "[0, 1]"
+            },
+            {
+                "input": "nums = [4, 5, 6], target = 10",
+                "output": "[0, 2]"
+            }
+        ],
+        "constraints": "2 <= nums.length <= 1000\n-10^7 <= nums[i] <= 10^7\n-10^7 <= target <= 10^7",
+        "solution": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        prevMap = {}\n        for i, n in enumerate(nums):\n            diff = target - n\n            if diff in prevMap:\n                return [prevMap[diff], i]\n            prevMap[n] = i"
+    },
+    {
+        "problem_name": "Is Palindrome",
+        "difficulty": "Easy",
+        "examples": [
+            {
+                "input": "s = \"Was it a car or a cat I saw?\"",
+                "output": "true"
+            },
+            {
+                "input": "s = \"tab a cat\"",
+                "output": "false"
+            }
+        ],
+        "constraints": "1 <= s.length <= 1000\ns is made up of only printable ASCII characters.",
+        "solution": "class Solution:\n    def isPalindrome(self, s: str) -> bool:\n        l, r = 0, len(s) - 1\n        while l < r:\n            while l < r and not self.alphaNum(s[l]):\n                l += 1\n            while r > l and not self.alphaNum(s[r]):\n                r -= 1\n            if s[l].lower() != s[r].lower():\n                return False\n            l, r = l + 1, r - 1\n        return True\n    def alphaNum(self, c):\n        return (ord('A') <= ord(c) <= ord('Z') or\n                ord('a') <= ord(c) <= ord('z') or\n                ord('0') <= ord(c) <= ord('9'))"
+    },
+    {
+        "problem_name": "Validate Parentheses",
+        "difficulty": "Easy",
+        "examples": [
+            {
+                "input": "s = \"[]\"",
+                "output": "true"
+            },
+            {
+                "input": "s = \"([{}])\"",
+                "output": "true"
+            },
+            {
+                "input": "s = \"[(])\"",
+                "output": "false"
+            }
+        ],
+        "constraints": "1 <= s.length <= 1000",
+        "solution": "class Solution:\n    def isValid(self, s: str) -> bool:\n        Map = {')': '(', ']': '[', '}': '{'}\n        stack = []\n        for c in s:\n            if c not in Map:\n                stack.append(c)\n                continue\n            if not stack or stack[-1] != Map[c]:\n                return False\n            stack.pop()\n        return not stack"
+    },
+    {
+        "problem_name": "Anagram Groups",
+        "difficulty": "Medium",
+        "examples": [
+            {
+                "input": "strs = [\"act\", \"pots\", \"tops\", \"cat\", \"stop\", \"hat\"]",
+                "output": "[[\"hat\"], [\"act\", \"cat\"], [\"stop\", \"pots\", \"tops\"]]"
+            },
+            {
+                "input": "strs = [\"x\"]",
+                "output": "[[\"x\"]]"
+            }
+        ],
+        "constraints": "1 <= strs.length <= 1000\n0 <= strs[i].length <= 100\nstrs[i] is made up of lowercase English letters.",
+        "solution": "class Solution:\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        ans = defaultdict(list)\n        for s in strs:\n            count = [0] * 26\n            for c in s:\n                count[ord(c) - ord('a')] += 1\n            ans[tuple(count)].append(s)\n        return ans.values()"
+    },
+    {
+        "problem_name": "Longest Consecutive Sequence",
+        "difficulty": "Medium",
+        "examples": [
+            {
+                "input": "nums = [2, 2, 4, 10, 3, 4, 5]",
+                "output": "4"
+            },
+            {
+                "input": "nums = [0, 3, 2, 5, 4, 6, 1, 1]",
+                "output": "7"
+            }
+        ],
+        "constraints": "0 <= nums.length <= 1000\n-10^9 <= nums[i] <= 10^9",
+        "solution": "class Solution:\n    def longestConsecutive(self, nums: List[int]) -> int:\n        numSet = set(nums)\n        longest = 0\n        for n in numSet:\n            if (n - 1) not in numSet:\n                length = 1\n                while (n + length) in numSet:\n                    length += 1\n                longest = max(length, longest)\n        return longest"
+    },
+    {
+        "problem_name": "Daily Temperatures",
+        "difficulty": "Medium",
+        "examples": [
+            {
+                "input": "temperatures = [30, 38, 30, 36, 35, 40, 28]",
+                "output": "[1, 4, 1, 2, 1, 0, 0]"
+            },
+            {
+                "input": "temperatures = [22, 21, 20]",
+                "output": "[0, 0, 0]"
+            }
+        ],
+        "constraints": "1 <= temperatures.length <= 1000\n1 <= temperatures[i] <= 100",
+        "solution": "class Solution:\n    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:\n        res = [0] * len(temperatures)\n        stack = []\n        for i, t in enumerate(temperatures):\n            while stack and t > stack[-1][0]:\n                stackT, stackInd = stack.pop()\n                res[stackInd] = i - stackInd\n            stack.append((t, i))\n        return res"
+    },
+    {
+        "problem_name": "Eating Bananas",
+        "difficulty": "Medium",
+        "examples": [
+            {
+                "input": "piles = [1, 4, 3, 2], h = 9",
+                "output": "2"
+            },
+            {
+                "input": "piles = [25, 10, 23, 4], h = 4",
+                "output": "25"
+            }
+        ],
+        "constraints": "1 <= piles.length <= 1000\npiles.length <= h <= 1,000,000\n1 <= piles[i] <= 1,000,000,000",
+        "solution": "class Solution:\n    def minEatingSpeed(self, piles: List[int], h: int) -> int:\n        l, r = 1, max(piles)\n        res = r\n        while l <= r:\n            k = (l + r) // 2\n            totalTime = 0\n            for p in piles:\n                totalTime += math.ceil(float(p) / k)\n            if totalTime <= h:\n                res = k\n                r = k - 1\n            else:\n                l = k + 1\n        return res"
+    },
+    {
+        "problem_name": "Longest Substring Without Duplicates",
+        "difficulty": "Medium",
+        "examples": [
+            {
+                "input": "s = \"zxyzxyz\"",
+                "output": "3"
+            },
+            {
+                "input": "s = \"xxxx\"",
+                "output": "1"
+            }
+        ],
+        "constraints": "0 <= s.length <= 1000\ns may consist of printable ASCII characters.",
+        "solution": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        charSet = set()\n        l = 0\n        res = 0\n        for r in range(len(s)):\n            while s[r] in charSet:\n                charSet.remove(s[l])\n                l += 1\n            charSet.add(s[r])\n            res = max(res, r - l + 1)\n        return res"
+    },
+    {
+        "problem_name": "Largest Rectangle In Histogram",
+        "difficulty": "Hard",
+        "examples": [
+            {
+                "input": "heights = [7, 1, 7, 2, 2, 4]",
+                "output": "8"
+            },
+            {
+                "input": "heights = [1, 3, 7]",
+                "output": "7"
+            }
+        ],
+        "constraints": "1 <= heights.length <= 1000\n0 <= heights[i] <= 1000",
+        "solution": "class Solution:\n    def largestRectangleArea(self, heights: List[int]) -> int:\n        maxArea = 0\n        stack = []\n        for i, h in enumerate(heights):\n            start = i\n            while stack and stack[-1][1] > h:\n                index, height = stack.pop()\n                maxArea = max(maxArea, height * (i - index))\n                start = index\n            stack.append((start, h))\n        for i, h in stack:\n            maxArea = max(maxArea, h * (len(heights) - i))\n        return maxArea"
+    },
+    {
+        "problem_name": "Median of Two Sorted Arrays",
+        "difficulty": "Hard",
+        "examples": [
+            {
+                "input": "nums1 = [1, 2], nums2 = [3]",
+                "output": "2.0"
+            },
+            {
+                "input": "nums1 = [1, 3], nums2 = [2, 4]",
+                "output": "2.5"
+            }
+        ],
+        "constraints": "nums1.length == m\nnums2.length == n\n0 <= m <= 1000\n0 <= n <= 1000\n-10^6 <= nums1[i], nums2[i] <= 10^6",
+        "solution": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        A, B = nums1, nums2\n        total = len(nums1) + len(nums2)\n        half = total // 2\n        if len(B) < len(A):\n            A, B = B, A\n        l, r = 0, len(A) - 1\n        while True:\n            i = (l + r) // 2\n            j = half - i - 2\n            Aleft = A[i] if i >= 0 else float(\"-infinity\")\n            Aright = A[i + 1] if (i + 1) < len(A) else float(\"infinity\")\n            Bleft = B[j] if j >= 0 else float(\"-infinity\")\n            Bright = B[j + 1] if (j + 1) < len(B) else float(\"infinity\")\n            if Aleft <= Bright and Bleft <= Aright:\n                if total % 2:\n                    return min(Aright, Bright)\n                return (max(Aleft, Bleft) + min(Aright, Bright)) / 2\n            elif Aleft > Bright:\n                r = i - 1\n            else:\n                l = i + 1"
+    },
+    {
+        "problem_name": "Minimum Window With Characters",
+        "difficulty": "Hard",
+        "examples": [
+            {
+                "input": "s = \"OUZODYXAZV\", t = \"XYZ\"",
+                "output": "\"YXAZ\""
+            },
+            {
+                "input": "s = \"xyz\", t = \"xyz\"",
+                "output": "\"xyz\""
+            }
+        ],
+        "constraints": "1 <= s.length <= 1000\n1 <= t.length <= 1000\ns and t consist of uppercase and lowercase English letters.",
+        "solution": "class Solution:\n    def minWindow(self, s: str, t: str) -> str:\n        if t == \"\":\n            return \"\"\n        countT, window = {}, {}\n        for c in t:\n            countT[c] = 1 + countT.get(c, 0)\n        have, need = 0, len(countT)\n        res, resLen = [-1, -1], float(\"infinity\")\n        l = 0\n        for r in range(len(s)):\n            c = s[r]\n            window[c] = 1 + window.get(c, 0)\n            if c in countT and window[c] == countT[c]:\n                have += 1\n            while have == need:\n                if (r - l + 1) < resLen:\n                    res = [l, r]\n                    resLen = r - l + 1\n                window[s[l]] -= 1\n                if s[l] in countT and window[s[l]] < countT[s[l]]:\n                    have -= 1\n                l += 1\n        l, r = res\n        return s[l : r + 1] if resLen != float(\"infinity\") else \"\""
+    }
+]
