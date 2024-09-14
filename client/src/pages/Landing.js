@@ -3,7 +3,7 @@ import Carousel from '../components/Carousel/CarouselWrapper';
 
 function Landing() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center py-8 px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center text-center py-8 px-4 pt-40 pb-40">
       <header className="w-full max-w-4xl mx-auto p-6 rounded-lg shadow-lg">
         <h1 className="text-4xl font-extrabold text-gradient mb-4">
           LeetCoach
