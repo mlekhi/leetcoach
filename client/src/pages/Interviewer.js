@@ -3,8 +3,15 @@ import React from 'react';
 import Question from './Question';
 import Sandbox from './CodeSandbox';
 import Timer from '../components/Timer';
+import { api } from '../convex/_generated/api';
+import { useState, useEffect } from 'react';
+import { useQuery } from "convex/react";
 
 const Interview = () => {
+    const difficulty = "easy"
+    const task = useQuery(api.tasks.getRandomTask, { difficulty });
+    console.log(task)
+    
     return (
         <div className="min-h-screen text-white py-12 px-6 flex items-start pt-40 pb-40">
             <div className="container mx-auto flex flex-col lg:flex-row gap-12">
