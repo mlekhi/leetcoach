@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Landing from './pages/Landing';
 import Interviewer from './pages/Interviewer';
+import TranscriptionPage from './pages/TranscriptionPage'; // Import the new TranscriptionPage component
 import Menu from './components/Menu'; 
 import Footer from './components/Footer'; 
 import PrivateRoute from './components/PrivateRoute'; // Import the PrivateRoute component
@@ -26,6 +27,10 @@ function App() {
             <Route
               path="/main"
               element={<PrivateRoute element={<Interviewer />} />}
+            />
+            <Route
+              path="/transcription"
+              element={<PrivateRoute element={<TranscriptionPage />} />}
             />
           </Routes>
           <Footer /> 
