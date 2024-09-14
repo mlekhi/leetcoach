@@ -1,13 +1,10 @@
-import Menu from '../../components/Menu/Menu.js';
-import Footer from '../../components/Footer/Footer.js';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // import carousel styles
 import { Carousel } from 'react-responsive-carousel';
 
-function App() {
+function Landing() {
   return (
     <div className="App">
       <header className="App-header">
-        <Menu/>
         <h1>Welcome to LeetCoach</h1>
         <p>
           LeetCoach is an AI-driven technical interviewer designed to assess not only your coding skills, but also your communication.
@@ -43,10 +40,9 @@ function App() {
             </div>
           </Carousel>
         </div>
-        <Footer/>
       </header>
     </div>
   );
 }
 
-export default App;
+export default Landing;
