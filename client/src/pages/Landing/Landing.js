@@ -1,5 +1,5 @@
-import Menu from '../components/Menu/Menu.js';
-import Footer from '../components/Footer/Footer.js';
+import Menu from '../../components/Menu/Menu.js';
+import Footer from '../../components/Footer/Footer.js';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // import carousel styles
 import { Carousel } from 'react-responsive-carousel';
 
@@ -17,9 +17,7 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://leetcoach.com/start"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/start"
         >
           Start Your First Interview
         </a>
