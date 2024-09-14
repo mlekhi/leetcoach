@@ -2,6 +2,7 @@
     {
         "problem_name": "Duplicate Integer",
         "difficulty": "Easy",
+        "description": "Given an integer array nums, return true if any value appears more than once in the array, otherwise return false.",
         "examples": [
             {
                 "input": "nums = [1, 2, 3, 3]",
@@ -18,6 +19,7 @@
     {
         "problem_name": "Is Anagram",
         "difficulty": "Easy",
+        "description": "Given two strings s and t, return true if the two strings are anagrams of each other, otherwise return false. An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.",
         "examples": [
             {
                 "input": "s = \"racecar\", t = \"carrace\"",
@@ -34,6 +36,7 @@
     {
         "problem_name": "Two Integer Sum",
         "difficulty": "Easy",
+        "description": "Given an array of integers nums and an integer target, return the indices i and j such that nums[i] + nums[j] == target and i != j. You may assume that every input has exactly one pair of indices that satisfy the condition.",
         "examples": [
             {
                 "input": "nums = [3, 4, 5, 6], target = 7",
@@ -50,6 +53,7 @@
     {
         "problem_name": "Is Palindrome",
         "difficulty": "Easy",
+        "description": "Given a string s, return true if it is a palindrome, otherwise return false. A palindrome is a string that reads the same forward and backward. It is also case-insensitive and ignores all non-alphanumeric characters.",
         "examples": [
             {
                 "input": "s = \"Was it a car or a cat I saw?\"",
@@ -66,6 +70,7 @@
     {
         "problem_name": "Validate Parentheses",
         "difficulty": "Easy",
+        "description": "You are given a string s consisting of the following characters: '(', ')', '{', '}', '[', and ']'. The input string s is valid if and only if: every open bracket is closed by the same type of close bracket, and open brackets are closed in the correct order.",
         "examples": [
             {
                 "input": "s = \"[]\"",
@@ -86,6 +91,7 @@
     {
         "problem_name": "Anagram Groups",
         "difficulty": "Medium",
+        "description": "Given an array of strings strs, group all anagrams together into sublists. You may return the output in any order. An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.",
         "examples": [
             {
                 "input": "strs = [\"act\", \"pots\", \"tops\", \"cat\", \"stop\", \"hat\"]",
@@ -102,6 +108,7 @@
     {
         "problem_name": "Longest Consecutive Sequence",
         "difficulty": "Medium",
+        "description": "Given an array of integers nums, return the length of the longest consecutive sequence of elements. A consecutive sequence is a sequence of elements in which each element is exactly 1 greater than the previous element. You must write an algorithm that runs in O(n) time.",
         "examples": [
             {
                 "input": "nums = [2, 2, 4, 10, 3, 4, 5]",
@@ -118,6 +125,7 @@
     {
         "problem_name": "Daily Temperatures",
         "difficulty": "Medium",
+        "description": "You are given an array of integers temperatures where temperatures[i] represents the daily temperatures on the ith day. Return an array result where result[i] is the number of days after the ith day before a warmer temperature appears on a future day. If there is no day in the future where a warmer temperature will appear for the ith day, set result[i] to 0 instead.",
         "examples": [
             {
                 "input": "temperatures = [30, 38, 30, 36, 35, 40, 28]",
@@ -134,6 +142,7 @@
     {
         "problem_name": "Eating Bananas",
         "difficulty": "Medium",
+        "description": "You are given an integer array piles where piles[i] is the number of bananas in the ith pile. You are also given an integer h, which represents the number of hours you have to eat all the bananas. You may decide your bananas-per-hour eating rate of k. Each hour, you may choose a pile of bananas and eat k bananas from that pile. If the pile has fewer than k bananas, you may finish eating the pile but cannot eat from another pile in the same hour. Return the minimum integer k such that you can eat all the bananas within h hours.",
         "examples": [
             {
                 "input": "piles = [1, 4, 3, 2], h = 9",
@@ -150,6 +159,7 @@
     {
         "problem_name": "Longest Substring Without Duplicates",
         "difficulty": "Medium",
+        "description": "Given a string s, find the length of the longest substring without duplicate characters. A substring is a contiguous sequence of characters within a string.",
         "examples": [
             {
                 "input": "s = \"zxyzxyz\"",
@@ -166,6 +176,7 @@
     {
         "problem_name": "Largest Rectangle In Histogram",
         "difficulty": "Hard",
+        "description": "You are given an array of integers heights where heights[i] represents the height of a bar. The width of each bar is 1. Return the area of the largest rectangle that can be formed among the bars. Note: This chart is known as a histogram.",
         "examples": [
             {
                 "input": "heights = [7, 1, 7, 2, 2, 4]",
@@ -182,6 +193,7 @@
     {
         "problem_name": "Median of Two Sorted Arrays",
         "difficulty": "Hard",
+        "description": "You are given two integer arrays nums1 and nums2 of size m and n respectively, where each is sorted in ascending order. Return the median value among all elements of the two arrays. Your solution must run in O(log(m+n)) time.",
         "examples": [
             {
                 "input": "nums1 = [1, 2], nums2 = [3]",
@@ -198,6 +210,7 @@
     {
         "problem_name": "Minimum Window With Characters",
         "difficulty": "Hard",
+        "description": "Given two strings s and t, return the shortest substring of s such that every character in t, including duplicates, is present in the substring. If such a substring does not exist, return an empty string. You may assume that the correct output is always unique.",
         "examples": [
             {
                 "input": "s = \"OUZODYXAZV\", t = \"XYZ\"",
