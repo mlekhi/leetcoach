@@ -21,8 +21,8 @@ const Interview = () => {
                     </div>
                 </div>
 
-                <div className="lg:w-1/4">
-                    <div className="mt-4 p-4 rounded-lg shadow-neon-blue">
+                <div className="lg:w-1/4 flex flex-col items-center">
+                    <div className="w-20 mt-4 p-4 rounded-full shadow-neon-blue">
                         <Timer />
                     </div>
                     <div className="mt-4 p-4 rounded-lg">
