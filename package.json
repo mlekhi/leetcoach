@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "convex": "^1.16.0",
+    "groq-sdk": "^0.7.0"
+  }
+}
